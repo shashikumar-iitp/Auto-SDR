@@ -1,9 +1,10 @@
+from google.colab import userdata
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=userdata.get("OPENAI_API_KEY"))
 
 def generate_email(lead_data, product_info):
     """
